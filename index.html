@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS | Ajayi Temitope Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="intro">
+        <header>
+            <div class="logo">
+                <img src="images/EMS.svg" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#intro">Intro</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                </ul>
+            </nav>
+            <div class="cart" title="Items in Cart" onclick="showCart()">
+                <img src="images/cart.svg" width="40px" alt="">
+                <span id="cart_total">0</span>
+            </div>
+        </header>
+        <div class="banner">
+            <div class="txt">The E- Millenial Store</div>
+            <img src="images/heroImage.png" width="50%" alt="">
+        </div>
+        <a href="#shop">Shop Now</a>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>The E-Millenial Store is hypotethical online store for gadgets we believe every 'Millenial' or 'Gen-Z' should have today. We have got Mobile Phones, Laptops, Smart-Watches and other Gadgets. Explore all our gadgets and choose one that will suit you. </p>
+    </section>
+    <section id="shop">
+        <h2>Our Gadgets</h2>
+        <div class="gadgets" id="gadgets" >
+
+        </div>
+    </section>
+    <footer>
+        <a href="#intro"><img src="images/EMS.svg" alt=""></a>
+        <div>&copy; 2022. Design by Ajayi Temitope (0808-946-9906)</div>
+    </footer>
+
+    <div id="modal" class="animate">
+        <button title="Close Cart" id="close_modal" onclick="hideCart()">X</button>
+        <div id="cartTable">
+        </div>
+        <input type="text" id="cname" placeholder="Your Name" required onblur="checkField('cname')">
+        <p id="cname_error" class="error"></p>
+        <input type="text" id="cemail" placeholder="Your Email" required onblur="checkField('cemail')">
+        <p id="cemail_error" class="error"></p>
+        <input type="text" id="cphone" placeholder="Your Phone Number" required onblur="checkField('cphone')">
+        <p id="cphone_error" class="error"></p>
+        <h3>Amount to be Paid</h3>
+        <h1 id="total_in_cart"></h1>
+        <input type='hidden' id='aggTotal' name='total'>
+        <a href="#shop" id="continueShopping" onclick="hideCart()">Continue Shopping</a>
+        <button id="checkout" disabled onclick="checkOut()">Checkout and Pay</button>
+    </div>
+    <div id="overlay"></div>
+
+    <div id="summary">
+        <button title="Close Summary" id="close_summary" onclick="hideSummary()">X</button>
+        <img src="images/success.png" alt="" class="success">
+        <p>Thanks you <strong><span id="sname"></span></strong>! Your Order has been received with payment reference <span id="payRef"></span>, we will get in touch with you shortly.</p><br>
+        <h3>Summary of Order</h3>
+        <div id="tblSummary"></div>
+        <hr>
+        <h1 id="total_summary"></h1>
+    </div>
+    <script src="https://js.paystack.co/v1/inline.js"></script> 
+    <script src="product_list.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
